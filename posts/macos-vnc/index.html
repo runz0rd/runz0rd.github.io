@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>Using macOS&#39; built-in vnc server from X11</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../css/theme.css"/>
+    
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="border-info"
+                    
+                        
+                            src="../../images/avatar.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Miloš Pejanović
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    tech blog
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../about/" title="About">About</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../tags/" title="Tags">Tags</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="http://github.com/runz0rd" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/milos-pejanovic-8ab68ab1/" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://fosstodon.org/@runz0rd" target="_blank">
+                            <i class="fab fa-mastodon fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://t.me/runz0rd" target="_blank">
+                            <i class="fab fa-telegram fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="../../posts/index.xml" target="_blank">
+                            <i class="fas fa-rss fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-4 ml-sm-5">
+        <h2 id="why">Why</h2>
+<p>I wanted an easy way control my macbookpro from my desktop setup.</p>
+<p>What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little  thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.</p>
+<p>This was working seamlessly.</p>
+<p>The modifications I made were minor but finding the correct ones cost me some time.</p>
+<p>The time/effort I spent here shouldn&rsquo;t be repeated.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>a machine running macOS and &ldquo;Screen Sharing&rdquo; (using Mojave 10.14.16)</li>
+<li>a client machine running X11 (using X.Org version 1.20.8)</li>
+<li>a vnc client (using <a href="https://fredrik.hubbe.net/x2vnc.html">x2vnc</a>)</li>
+<li>local network access</li>
+</ul>
+<p><strong>Okay, here we go.</strong></p>
+<h2 id="setup-your-mac-to-use-a-vnc-server">Setup your mac to use a vnc server</h2>
+<ol>
+<li>System preferences &gt; Sharing</li>
+<li>Fill Screen Sharing checkbox</li>
+<li>Computer settings&hellip; &gt; fill password checkbox and set a password</li>
+</ol>
+<p>Note: you can see your vnc server address just above the &ldquo;Computer settings&rdquo; button (&ldquo;vnc://x.x.x.x&rdquo;)</p>
+<h2 id="setup-your-x-system-to-use-your-vnc-server">Setup your X system to use your vnc server</h2>
+<ol>
+<li>Install x2vnc (available in AUR for me, but you can always <a href="https://fredrik.hubbe.net/x2vnc.html">download</a> and build it yourself).</li>
+<li>rtfm <code>man x2vnc</code> for basic usage and options.</li>
+<li>connect, press the hotkey (the one you supplied or if not the default one: F12)</li>
+<li>profit!</li>
+</ol>
+<p><strong>Too easy, right?</strong></p>
+<h2 id="problems">Problems</h2>
+<p>The connection is running fine, no interruptions, mouse and keyboard are working almost seamlessly. But!</p>
+<p>Some of the keys are swapped, as macOS usually does with keyboards from other vendors (in my case those were control and super).</p>
+<p>Some keys were not mapped. (in my case alt was missing, that is, binding the alt key to the &ldquo;option&rdquo; key on mac).</p>
+<h2 id="solutions">Solutions</h2>
+<p>Remap to the rescue!</p>
+<p>First thing I installed was <a href="https://karabiner-elements.pqrs.org/">Karabiner-elements</a>. This is a great tool to remap keys on your mac keyboard or any other keyboard you may be using directly on the mac. Ive used this tool before and it was working perfectly.
+Unfortunately the remaps were being ignored, possibly due to the fact I was connecting through a vnc.</p>
+<p>Secondly I tried remapping keyboard modifier keys through macOS&rsquo; Keyboard preferences. As with karabiner, no luck.</p>
+<p>Alright, lets remap the keys on my client side then.</p>
+<p>Enter <code>xmodmap</code>. This wild thing was the most effective way to remap keys on a X system and nicely reflects the underlying system (most likely over-engineered).</p>
+<p>I also tried using <code>setxkbmap</code> for remapping, but could not get the desired effect. It does however, work very well to reset your keymap to their defaults (which I used).</p>
+<h3 id="configure-xmodmap">Configure xmodmap</h3>
+<p>My keyboard layout isn&rsquo;t generic in any way, but I was happily using the generic 102 layout provided by default without any issues.</p>
+<p>You can find out what your current layout modifier map looks like with <code>xmodmap -pm</code>. Heres mine:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">shift       Shift_L (0x32),  Shift_R (0x3e)
+lock        Caps_Lock (0x42)
+control     Control_L (0x25),  Control_R (0x69)
+mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
+mod2        Num_Lock (0x4d)
+mod3
+mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
+mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)
+</code></pre></div><p>Looks mostly normal: the modifiers are connected to the correct keys.</p>
+<p>For my sessions with the mac machine I needed the following corrected:</p>
+<ol>
+<li>Control and super were swapped out.</li>
+<li>Alt key did the same as super, but needed it to perform as the &ldquo;option&rdquo; key.</li>
+</ol>
+<p>Heres my take on the remapping:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">remove mod4 = Super_L
+remove control = Control_L
+remove mod1 = Alt_L
+
+keycode 133 = Control_L
+keycode 37 = Super_L
+keycode 64 = Meta_L
+
+add mod4 = Super_L
+add control = Control_L
+add mod1 = Meta_L
+</code></pre></div><p>Let me explain (im not even sure this is correct), or alternatively read <code>man xmodmap</code> (not light reading):</p>
+<ul>
+<li>lines 1-3 lines are about removing the existing mapping (you wouldn&rsquo;t be able to remap keys if they&rsquo;re already mapped).</li>
+<li>the next block is about assigning your keycodes to the actual keysym that will be used to map to the modifier in the last block (see below for keycode explanation).</li>
+<li>the last block is reassigning the keysyms to the modifiers we removed in the first step (note that these now correspond to different keycodes)</li>
+</ul>
+<p>Note: this example is only remapping the left side modifiers since those are the only ones I use. If your keyboard is different or you&rsquo;re using the other or both sides, modify accordingly.</p>
+<h4 id="keycodes-explained">Keycodes explained</h4>
+<p>The keycode is the numeric representation received by the kernel when a key or a mouse button is pressed (<a href="https://wiki.archlinux.org/index.php/Xmodmap#Introduction">source</a>).</p>
+<p>To find which keysym correspond to which keycode by default for your keyboard/layout look for them with <code>xmodmap -pke | grep &lt;keysym&gt;</code></p>
+<p>So for my use cases I had to find keycodes for Super_L, Control_L and Alt_L (and those were 133, 37 and 64, in the order given).</p>
+<p>So, in the example above im assigning 133 to Control_L, 37 to Super_L (swap super and control), and 64 to Meta_L (the previous Alt_L). WAT?</p>
+<h4 id="why-meta_l">Why Meta_L</h4>
+<p>This is the tricky part (and the one that ate most of my time spent on this).
+It turns out that the option key on the macbookpro keyboard via vnc corresponds to Meta keysym. Yep. Not Alt, not Mode_switch or ISO_Level3_Shift as suggested by some <a href="https://archive.realvnc.com/products/vnc/documentation/4.5/mac/mac_keyboard_mapping.html#parameters">reading</a>, but Meta.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Space-cadet_keyboard_-_bottom-left_modifier_crop.jpg/440px-Space-cadet_keyboard_-_bottom-left_modifier_crop.jpg" alt="dont even have that one on my keyboard :`)"></p>
+<p>Im not sure if this is on me, my keyboard, mac&rsquo;s vnc server or the client Im using, but I have to say: <strong>well done</strong>.</p>
+<p>And how did I find this out, you ask?</p>
+<p>I implemented a test <a href="https://github.com/kward/go-vnc">vnc client</a> that would send different modifiers with key combinations to check my sanity and confirm that I will/wont be able to use the &ldquo;option&rdquo; key while vnc-ing.</p>
+<h3 id="tying-the-client-side-together-with-a-bash-script">Tying the client side together with a bash script</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+trap <span style="color:#e6db74">&#39;echo interrupted&#39;</span> INT
+xmodmap ~/mac.xmod
+x2vnc x.x.x.x:0 -wheelhack -passwd $HOME/.vncpasswd -resurface -hotkey F9
+setxkbmap -option
+</code></pre></div><h4 id="explanation">Explanation</h4>
+<ul>
+<li>The first line traps the interrupt signal you will have to supply to get out of the vnc client connection, and continues running commands after it.</li>
+<li><code>xmodmap ~/mac.xmod</code> this applies the example mapping provided above (you can feed it into xmodmap from a file)</li>
+<li><code>x2vnc ...</code> connects to the vnc server. In order to switch your mouse/keyboard to the other machine, press the hotkey (the one you provided, or if not F12). Note that if you remapped your control key (as I did with Control_L) you have to use the updated mappings to issue an interrupt signal (for the example here, its Super_L+C)</li>
+<li>Finally <code>setxkbmap -option</code> resets the keymappings to their default values</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>This was a bit of a headache but rewarding. I now have a fast, reliable and free way to control my macbookpro from my desktop setup.</p>
+<p>Now, I need a drink.</p>
+<p>Cheers.</p>
+
+    </div>
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            any post content is under the MIT License
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Runz0rd&#39;s blog</title>
+    <link>https://runz0rd.github.io/tags/</link>
+    <description>Recent content in Tags on Runz0rd&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>any post content is under the MIT License</copyright>
+    <lastBuildDate>Sun, 26 Apr 2020 13:19:36 +0200</lastBuildDate>
+    
+	<atom:link href="https://runz0rd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mac</title>
+      <link>https://runz0rd.github.io/tags/mac/</link>
+      <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
+      
+      <guid>https://runz0rd.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vnc</title>
+      <link>https://runz0rd.github.io/tags/vnc/</link>
+      <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
+      
+      <guid>https://runz0rd.github.io/tags/vnc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>X11</title>
+      <link>https://runz0rd.github.io/tags/x11/</link>
+      <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
+      
+      <guid>https://runz0rd.github.io/tags/x11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>x2vnc</title>
+      <link>https://runz0rd.github.io/tags/x2vnc/</link>
+      <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
+      
+      <guid>https://runz0rd.github.io/tags/x2vnc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xmodmap</title>
+      <link>https://runz0rd.github.io/tags/xmodmap/</link>
+      <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
+      
+      <guid>https://runz0rd.github.io/tags/xmodmap/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

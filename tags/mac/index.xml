@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mac on Runz0rd&#39;s blog</title>
+    <link>https://runz0rd.github.io/tags/mac/</link>
+    <description>Recent content in mac on Runz0rd&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>any post content is under the MIT License</copyright>
+    <lastBuildDate>Sun, 26 Apr 2020 13:19:36 +0200</lastBuildDate>
+    
+	<atom:link href="https://runz0rd.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using macOS&#39; built-in vnc server from X11</title>
+      <link>https://runz0rd.github.io/posts/macos-vnc/</link>
+      <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
+      
+      <guid>https://runz0rd.github.io/posts/macos-vnc/</guid>
+      <description>Why I wanted an easy way control my macbookpro from my desktop setup.
+What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &amp;ldquo;vnced&amp;rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.</description>
+    </item>
+    
+  </channel>
+</rss>
