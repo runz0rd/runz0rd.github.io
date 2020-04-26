@@ -112,6 +112,7 @@
 <li>System preferences &gt; Sharing</li>
 <li>Fill Screen Sharing checkbox</li>
 <li>Computer settings&hellip; &gt; fill password checkbox and set a password</li>
+<li>Run <code>defaults write /Library/Preferences/com.apple.RemoteManagement VNCAlwaysStartOnConsole -bool true</code> (this will let the vnc client connect into the currently logged in user, skipping the login. Important if youre going in without video, like in this example)</li>
 </ol>
 <p>Note: you can see your vnc server address just above the &ldquo;Computer settings&rdquo; button (&ldquo;vnc://x.x.x.x&rdquo;)</p>
 <h2 id="setup-your-x-system-to-use-your-vnc-server">Setup your X system to use your vnc server</h2>
