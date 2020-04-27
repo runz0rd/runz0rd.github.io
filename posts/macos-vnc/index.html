@@ -209,7 +209,7 @@ It turns out that the option key on the macbookpro keyboard via vnc corresponds 
 </span><span style="color:#75715e"></span>
 trap <span style="color:#e6db74">&#39;echo interrupted&#39;</span> INT
 xmodmap ~/mac.xmod
-x2vnc x.x.x.x:0 -wheelhack -passwd $HOME/.vncpasswd -resurface -hotkey F9
+x2vnc x.x.x.x:0 -passwd $HOME/.vncpasswd -edgewidth <span style="color:#ae81ff">0</span> -hotkey F9
 setxkbmap -option
 </code></pre></div><h4 id="explanation">Explanation</h4>
 <ul>
