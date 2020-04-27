@@ -18,7 +18,7 @@ What I found was a lot of proprietary options and a couple of open sourced ones 
 What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since I&rsquo;m a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.">
 <meta itemprop="datePublished" content="2020-04-26T13:19:36&#43;02:00" />
 <meta itemprop="dateModified" content="2020-04-26T13:19:36&#43;02:00" />
-<meta itemprop="wordCount" content="1154">
+<meta itemprop="wordCount" content="1157">
 
 
 
@@ -209,7 +209,7 @@ It turns out that the option key on the macbookpro keyboard via vnc corresponds 
 </span><span style="color:#75715e"></span>
 trap <span style="color:#e6db74">&#39;echo interrupted&#39;</span> INT
 xmodmap ~/mac.xmod
-x2vnc x.x.x.x:0 -passwd $HOME/.vncpasswd -edgewidth <span style="color:#ae81ff">0</span> -hotkey F9
+x2vnc -hotkey F9 192.168.0.15:0 -passwd $HOME/.vncpasswd -edgewidth <span style="color:#ae81ff">0</span> -wheelhack -scrolllines <span style="color:#ae81ff">3</span>
 setxkbmap -option
 </code></pre></div><h4 id="explanation">Explanation</h4>
 <ul>
