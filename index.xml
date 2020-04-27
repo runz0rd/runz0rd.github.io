@@ -19,7 +19,7 @@
       
       <guid>https://runz0rd.github.io/about/</guid>
       <description>Introductions My name is Miloš Pejanović and I work as a programmer. Most of the time that work is regarding web services, but sometimes I get lucky and work on (internal) tooling and kubernetes. I live and work in Novi Sad, Serbia. This blog is my way of documenting how I waste my free time (with tech).
-Personal info Im a simple guy (not according to others). I enjoy (dis)assembling software, open source software (in every way), gunpla (ガンプラ), and watching movies, shows and anime.</description>
+Personal info Im a simple guy (not according to others). I enjoy (dis)assembling software, FOSS (in every way), gunpla (ガンプラ), and watching movies, shows and anime.</description>
     </item>
     
     <item>
@@ -28,8 +28,8 @@ Personal info Im a simple guy (not according to others). I enjoy (dis)assembling
       <pubDate>Sun, 26 Apr 2020 13:19:36 +0200</pubDate>
       
       <guid>https://runz0rd.github.io/posts/macos-vnc/</guid>
-      <description>Why I wanted an easy way control my macbookpro from my desktop setup.
-What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &amp;ldquo;vnced&amp;rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.</description>
+      <description>Why I wanted an easy way to control my macbookpro from my desktop setup.
+What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since I&amp;rsquo;m a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &amp;ldquo;vnced&amp;rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.</description>
     </item>
     
   </channel>

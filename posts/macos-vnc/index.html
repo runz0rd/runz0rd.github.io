@@ -6,27 +6,27 @@
     <link rel="stylesheet" href="../../css/theme.css"/>
     
     <meta property="og:title" content="Using macOS&#39; built-in vnc server from X11" />
-<meta property="og:description" content="Why I wanted an easy way control my macbookpro from my desktop setup.
-What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input." />
+<meta property="og:description" content="Why I wanted an easy way to control my macbookpro from my desktop setup.
+What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since I&rsquo;m a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://runz0rd.github.io/posts/macos-vnc/" />
 <meta property="article:published_time" content="2020-04-26T13:19:36+02:00" />
 <meta property="article:modified_time" content="2020-04-26T13:19:36+02:00" />
 
     <meta itemprop="name" content="Using macOS&#39; built-in vnc server from X11">
-<meta itemprop="description" content="Why I wanted an easy way control my macbookpro from my desktop setup.
-What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.">
+<meta itemprop="description" content="Why I wanted an easy way to control my macbookpro from my desktop setup.
+What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since I&rsquo;m a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.">
 <meta itemprop="datePublished" content="2020-04-26T13:19:36&#43;02:00" />
 <meta itemprop="dateModified" content="2020-04-26T13:19:36&#43;02:00" />
-<meta itemprop="wordCount" content="1153">
+<meta itemprop="wordCount" content="1154">
 
 
 
 <meta itemprop="keywords" content="mac,vnc,X11,xmodmap,x2vnc," />
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using macOS&#39; built-in vnc server from X11"/>
-<meta name="twitter:description" content="Why I wanted an easy way control my macbookpro from my desktop setup.
-What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input."/>
+<meta name="twitter:description" content="Why I wanted an easy way to control my macbookpro from my desktop setup.
+What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little thing that would annoy the hell out of me. Since I&rsquo;m a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input."/>
 
 </head>
 <body>
@@ -115,8 +115,8 @@ What I found was a lot of proprietary options and a couple of open sourced ones 
     </div>
     <br><div class="pl-sm-4 ml-sm-5">
         <h2 id="why">Why</h2>
-<p>I wanted an easy way control my macbookpro from my desktop setup.</p>
-<p>What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little  thing that would annoy the hell out of me. Since Im a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.</p>
+<p>I wanted an easy way to control my macbookpro from my desktop setup.</p>
+<p>What I found was a lot of proprietary options and a couple of open sourced ones that were okay, but always lacking some little  thing that would annoy the hell out of me. Since I&rsquo;m a cheap bastard and love open source I opted for the latter with modifications. Most vnc options were extremely slow, so I &ldquo;vnced&rdquo; my keyboard and mouse only (x2vnc), and connected the macbookpro to my monitor input.</p>
 <p>This was working seamlessly.</p>
 <p>The modifications I made were minor but finding the correct ones cost me some time.</p>
 <p>The time/effort I spent here shouldn&rsquo;t be repeated.</p>
@@ -196,12 +196,12 @@ add mod1 = Meta_L
 <p>The keycode is the numeric representation received by the kernel when a key or a mouse button is pressed (<a href="https://wiki.archlinux.org/index.php/Xmodmap#Introduction">source</a>).</p>
 <p>To find which keysym correspond to which keycode by default for your keyboard/layout look for them with <code>xmodmap -pke | grep &lt;keysym&gt;</code></p>
 <p>So for my use cases I had to find keycodes for Super_L, Control_L and Alt_L (and those were 133, 37 and 64, in the order given).</p>
-<p>So, in the example above im assigning 133 to Control_L, 37 to Super_L (swap super and control), and 64 to Meta_L (the previous Alt_L). WAT?</p>
+<p>So, in the example above I&rsquo;m assigning 133 to Control_L, 37 to Super_L (swap super and control), and 64 to Meta_L (the previous Alt_L). WAT?</p>
 <h4 id="why-meta_l">Why Meta_L</h4>
 <p>This is the tricky part (and the one that ate most of my time spent on this).
 It turns out that the option key on the macbookpro keyboard via vnc corresponds to Meta keysym. Yep. Not Alt, not Mode_switch or ISO_Level3_Shift as suggested by some <a href="https://archive.realvnc.com/products/vnc/documentation/4.5/mac/mac_keyboard_mapping.html#parameters">reading</a>, but Meta.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Space-cadet_keyboard_-_bottom-left_modifier_crop.jpg/440px-Space-cadet_keyboard_-_bottom-left_modifier_crop.jpg" alt="dont even have that one on my keyboard :`)"></p>
-<p>Im not sure if this is on me, my keyboard, mac&rsquo;s vnc server or the client Im using, but I have to say: <strong>well done</strong>.</p>
+<p>Im not sure if this is on me, my keyboard, mac&rsquo;s vnc server or the client I&rsquo;m using, but I have to say: <strong>well done</strong>.</p>
 <p>And how did I find this out, you ask?</p>
 <p>I implemented a test <a href="https://github.com/kward/go-vnc">vnc client</a> that would send different modifiers with key combinations to check my sanity and confirm that I will/wont be able to use the &ldquo;option&rdquo; key while vnc-ing.</p>
 <h3 id="tying-the-client-side-together-with-a-bash-script">Tying the client side together with a bash script</h3>
